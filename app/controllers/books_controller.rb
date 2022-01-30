@@ -1,37 +1,37 @@
 class BooksController < ApplicationController
 
   def new
-    @post_image = PostImage.new
+    @user = User.new
   end
 
   def create
 
-    @post_image = PostImage.new(post_image_params)
-    @post_image.user_id = current_user.id
-    @post_image.save
-    redirect_to post_images_path
+    @user = User.new(user_params)
+    @user.user_id = current_user.id
+    @user.save
+    redirect_to books_path
 
   end
 
   def index
-      @post_images = PostImage.all
+      @users = User.all
   end
 
   def show
-    @post_image = PostImage.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def destroy
-    @post_image = PostImage.find(params[:id])
-    @post_image.destroy
-    redirect_to post_images_path
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to users_path
   end
 
   # 投稿データのストロングパラメータ
   private
 
-  def post_image_params
-    params.require(:post_image).permit(:book_name, :image, :caption)
+  def user_params
+    params.require(:user).permit(:name, :introduction, :profile_image_id)
   end
 
 end
