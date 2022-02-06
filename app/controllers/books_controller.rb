@@ -24,13 +24,13 @@ class BooksController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to users_path
+    redirect_to books_path
   end
 
   # 投稿データのストロングパラメータ
   private
 
-  def user_params
+  def books_path
     params.require(:user).permit(:name, :introduction, :profile_image_id)
   end
 
