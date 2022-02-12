@@ -4,6 +4,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
   def change
     create_table :users do |t|
       ## Database authenticatable
+      #ユーザー名
+      t.string :name,              null: false, default: ""
       #メールアドレス
       t.string :email,              null: false, default: ""
       # 暗号化されたパスワード
