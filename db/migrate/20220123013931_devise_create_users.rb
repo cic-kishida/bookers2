@@ -37,7 +37,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       # t.datetime :locked_at
 
       # ユーザ登録の際の名前
-      t.string :name
       t.string :introduction
       t.string :profile_image_id
 

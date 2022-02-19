@@ -1,0 +1,11 @@
+<h2>HTMLファイル：views/users/index.html.erb</h2>
+<div>
+  <%= link_to user_path(@user.id) do %>
+　  <%= attachment_image_tag user, :image %>
+  <% end %>
+  <p>ユーザー画像：<%= image_tag('sample-author1.jpg') %></p>
+  <p>名前：<%= user.name %></p>
+  <p>自己紹介文：<%= user.introduction %></p>
+</div>
+
+

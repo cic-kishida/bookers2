@@ -1,10 +1,9 @@
+<h2>HTMLファイル：views/books/new.html.erb</h2>
 <h1>画像投稿フォーム</h1>
-<%= form_with model: @user, local:true do |f| %>
-  <h4>画像</h4>
-  <%= f.attachment_field :image %>
+<%= form_with model: @book, local:true do |f| %>
   <h4>ブック名</h4>
-  <%= f.text_field :name %>
+  <%= f.text_field :title %>
   <h4>説明</h4>
-  <%= f.text_area :introduction %>
+  <%= f.text_area :body %>
   <%= f.submit '投稿' %>
 <% end %>

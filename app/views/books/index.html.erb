@@ -1,2 +1,10 @@
+<h2>HTMLファイル：views/books/index.html.erb</h2>
 
-<h2>kokokara!</h2>
+
+<% @books.each do |book| %>
+<div>
+  <p>ブック名：<%= book.title %></p>
+  <p>説明：<%= book.body %></p>
+</div>
+
+<% end %>
