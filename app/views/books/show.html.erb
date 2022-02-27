@@ -1,11 +1,1 @@
 <h2>HTMLファイル：views/books/show.html.erb</h2>
-<div>
-  <%= attachment_image_tag @book, :image %>
-  <p>ブック名：<%= @book.title %></p>
-  <p>説明：<%= @book.body %></p>
-  <p>ユーザーネーム：<%= @user.name %></p>
-  <p>投稿日時：<%= @user.created_at.strftime('%Y/%m/%d') %></p>
-  <% if @user.user == current_user %>
-    <%= link_to "削除", user_path(@user), method: :delete %>
-  <% end %>
-</div>
